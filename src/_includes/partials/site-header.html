@@ -1,22 +1,13 @@
 <header>
-  <nav class="mx-auto container">
+  <nav class="container mx-auto">
     <div>
       <ul class="flex">
-        {% for item in navigation.headerItems %} 
-          {% if item.url == page.url %} 
-            {% assign highlight = 'cursor-default' %} 
-            {% assign current = 'aria-current="page"' %} 
-          {% else %} {% assign highlight = 'underline' %}
-            {% assign current = '' %} 
-          {% endif %}
+        {% for item in navigation.headerItems %} {% if item.url == page.url %}
+        {% assign highlight = 'cursor-default' %} {% assign current =
+        'aria-current="page"' %} {% else %} {% assign highlight = 'underline' %}
+        {% assign current = '' %} {% endif %}
         <li>
-          <a
-            href="{{ item.url }}"
-            class="{{ highlight }}"
-            {{
-            current
-            }}
-          >
+          <a href="{{ item.url }}" class="{{ highlight }}" {{ current }}>
             {{ item.text }}
           </a>
         </li>

@@ -1,31 +1,28 @@
-{% layout "layouts/base.html" %} 
-{% block content %}
-{% iconsprite %}
-<main x-data="initData" id="main-content"  tabindex="-1" class="mx-auto container">
-    <h1>
-      {{ intro.title }}
-    </h1>
-    <h2>
-      {{ intro.subtitle }}
-    </h2>
-    {% icon "wine-sharp" %}
-    <ul class="flex">
-    {% for item in navigation.headerItems %} 
-
-    {% endfor %}
-    </ul>
+{% layout "layouts/base.html" %} {% block content %} {% iconsprite %}
+<main
+  x-data="initData"
+  id="main-content"
+  tabindex="-1"
+  class="container mx-auto"
+>
+  <h1>{{ intro.title }}</h1>
+  <h2>{{ intro.subtitle }}</h2>
+  {% icon "wine-sharp" %}
+  <ul class="flex">
+    {% for item in navigation.headerItems %} {% endfor %}
+  </ul>
 </main>
 <script>
   document.addEventListener('alpine:init', () => {
     Alpine.data('initData', () => ({
-        links: ['work', 'Demo spa'],
-        open: true,
-        toggle() {
-            this.open = ! this.open
-        },
-    }))
-  }) 
+      links: ['work', 'Demo spa'],
+      open: true,
+      toggle() {
+        this.open = !this.open;
+      },
+    }));
+  });
 </script>
-{% endblock %}
-
- {# <div class="prose prose-lg prose-gray text-gray-500">{{ content }}</div> #}
+{% endblock %} {#
+<div class="prose prose-lg prose-gray text-gray-500">{{ content }}</div>
+#}
