@@ -1,18 +1,23 @@
 <header>
   <nav class="container mx-auto">
     <div>
-      <ul class="flex">
-        {% for item in navigation.headerItems %} {% if item.url == page.url %}
-        {% assign highlight = 'cursor-default' %} {% assign current =
-        'aria-current="page"' %} {% else %} {% assign highlight = 'underline' %}
-        {% assign current = '' %} {% endif %}
-        <li>
-          <a href="{{ item.url }}" class="{{ highlight }}" {{ current }}>
-            {{ item.text }}
-          </a>
-        </li>
-        {% endfor %}
+      <ul x-data="initData" class="flex">
+        <template x-for="link in links">
+          <li x-text="link.text"></li>
+        </template>
       </ul>
     </div>
   </nav>
 </header>
+<script>
+  console.log({{ navigation.headerItems | json }})
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('initData', () => ({
+        links: {{ navigation.headerItems | json }},
+        open: true,
+        toggle() {
+          this.open = !this.open;
+        },
+      }));
+    });
+</script>

@@ -8,14 +8,16 @@
   <h1>{{ intro.title }}</h1>
   <h2>{{ intro.subtitle }}</h2>
   {% icon "wine-sharp" %}
-  <ul class="flex">
-    {% for item in navigation.headerItems %} {% endfor %}
+  <ul x-data="initData" class="flex">
+    <template x-for="link in links">
+      <li x-text="link.text"></li>
+    </template>
   </ul>
 </main>
 <script>
   document.addEventListener('alpine:init', () => {
     Alpine.data('initData', () => ({
-      links: ['work', 'Demo spa'],
+      links: {{ navigation.homeItems | json }},
       open: true,
       toggle() {
         this.open = !this.open;
