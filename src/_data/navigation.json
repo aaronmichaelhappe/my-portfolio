@@ -1,5 +1,17 @@
 {
-  "items": [
+  "headerItems": [
+    {
+      "text": "Resume",
+      "url": "",
+      "icon": ""
+    },
+    {
+      "text": "GitHub",
+      "url": "/about/",
+      "icon": ""
+    }
+  ],
+  "homeItems": [
     {
       "text": "Home",
       "url": "/"
