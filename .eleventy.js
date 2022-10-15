@@ -1,7 +1,9 @@
 const fs = require('fs');
 const pluginSvgSprite = require('eleventy-plugin-svg-sprite');
 
-const shortcodes = require('./utils/shortcodes.js');
+// Shortcodes
+// shortcodes (may) not playing nicely with apline. not worth the fuss right now. implement later if app gets more complex
+// const shortcodes = require('./utils/shortcodes.js');
 
 module.exports = function (config) {
   config.setLiquidOptions({
@@ -13,10 +15,9 @@ module.exports = function (config) {
     svgSpriteShortcode: 'iconsprite',
   });
 
-  // Shortcodes
-  Object.keys(shortcodes).forEach((shortcodeName) => {
-    config.addShortcode(shortcodeName, shortcodes[shortcodeName]);
-  });
+  // Object.keys(shortcodes).forEach((shortcodeName) => {
+  //   config.addShortcode(shortcodeName, shortcodes[shortcodeName]);
+  // });
 
   config.addWatchTarget('./src/assets');
 
