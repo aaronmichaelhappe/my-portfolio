@@ -1,5 +1,5 @@
 {
-  "headerItems": [
+  "headerNavigation": [
     {
       "text": "Resume",
       "url": "",
@@ -11,10 +11,14 @@
       "icon": ""
     }
   ],
-  "homeItems": [
+  "homeNavigation": [
     {
       "text": "Home",
       "url": "/"
+    },
+    {
+      "text": "About",
+      "url": "/about/"
     },
     {
       "text": "About",
