@@ -1,7 +1,7 @@
 const fs = require('fs');
-const pluginSvgSprite = require("eleventy-plugin-svg-sprite");
+const pluginSvgSprite = require('eleventy-plugin-svg-sprite');
 
-const shortcodes = require('./utils/shortcodes.js')
+const shortcodes = require('./utils/shortcodes.js');
 
 module.exports = function (config) {
   config.setLiquidOptions({
@@ -9,16 +9,16 @@ module.exports = function (config) {
   });
 
   config.addPlugin(pluginSvgSprite, {
-    path: "./src/assets/icons",
-    svgSpriteShortcode: "iconsprite"
-  })
+    path: './src/assets/icons',
+    svgSpriteShortcode: 'iconsprite',
+  });
 
-      // Shortcodes
+  // Shortcodes
   Object.keys(shortcodes).forEach((shortcodeName) => {
-      config.addShortcode(shortcodeName, shortcodes[shortcodeName])
-  })
+    config.addShortcode(shortcodeName, shortcodes[shortcodeName]);
+  });
 
-  config.addWatchTarget('./src/assets')
+  config.addWatchTarget('./src/assets');
 
   // Static assets to pass through
   config.addPassthroughCopy('./src/assets/images');
@@ -31,7 +31,7 @@ module.exports = function (config) {
       input: 'src',
       output: '_site',
       includes: '_includes',
-      data: '_data'
+      data: '_data',
     },
     passthroughFileCopy: true,
     templateFormats: ['html', 'md', 'liquid'],

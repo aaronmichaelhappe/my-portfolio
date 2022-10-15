@@ -7,12 +7,7 @@
 >
   <h1>{{ intro.title }}</h1>
   <h2>{{ intro.subtitle }}</h2>
-  {% icon "wine-sharp" %}
-  <ul x-data="initData" class="flex">
-    <template x-for="link in links">
-      <li x-text="link.text"></li>
-    </template>
-  </ul>
+  {% icon 'triangle-outline' 'example' %}
 </main>
 <script>
   document.addEventListener('alpine:init', () => {
@@ -25,6 +20,4 @@
     }));
   });
 </script>
-{% endblock %} {#
-<div class="prose prose-lg prose-gray text-gray-500">{{ content }}</div>
-#}
+{% endblock %}
