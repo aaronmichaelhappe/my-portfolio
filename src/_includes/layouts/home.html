@@ -3,21 +3,86 @@
   x-data="initData"
   id="main-content"
   tabindex="-1"
-  class="container mx-auto"
+  class="relative m-2 box-border h-[98vh] overflow-hidden bg-grey-14 pt-8"
 >
-  <h1>{{ intro.title }}</h1>
-  <h2>{{ intro.subtitle }}</h2>
-  {% icon 'triangle-outline' 'example' %}
+  <div class="wrapper container mx-auto">
+    <div class="bg-icons absolute top-[50%] left-2">
+      <div class="flex flex-col">
+        <template x-for="(y, i) in yRepeats">
+          <div class="flex flex-row" :class="'-'+i">
+            <template x-for="(x, i) in xRepeats">
+              <div class="bg-icons-group mb-[36px] flex">
+                <p x-text="i"></p>
+                <svg
+                  class="icon mr-[36px] fill-gray-500"
+                  :class="'-'+i"
+                  role="img"
+                  aria-hidden="true"
+                  width="24"
+                  height="24"
+                >
+                  <use xlink:href="#svg-x" class="icon mr-[36px]"></use>
+                </svg>
+                <svg
+                  class="icon mr-[36px]"
+                  role="img"
+                  aria-hidden="true"
+                  width="24"
+                  height="24"
+                >
+                  <use xlink:href="#svg-circle"></use>
+                </svg>
+                <svg
+                  class="icon mr-[36px]"
+                  role="img"
+                  aria-hidden="true"
+                  width="24"
+                  height="24"
+                >
+                  <use xlink:href="#svg-triangle"></use>
+                </svg>
+                <svg
+                  class="icon mr-[36px] rotate-90"
+                  role="img"
+                  aria-hidden="true"
+                  width="24"
+                  height="24"
+                >
+                  <use xlink:href="#svg-plus"></use>
+                </svg></div
+            ></template>
+          </div>
+        </template>
+      </div>
+    </div>
+    <h1 class="text-hibiscus-200">{{ intro.title }}</h1>
+    <h2>{{ intro.subtitle }}</h2>
+  </div>
 </main>
 <script>
   document.addEventListener('alpine:init', () => {
+    function determineWidth() {
+      return Math.round((window.innerWidth + 168) / 168)
+    }
+    function determineHeight() {
+      return Math.round((window.innerHeight  / 2 + 36) / 60);
+    }
+    function updateAlpineDimensions() {
+      Alpine.data.xRepeats = determineWidth();
+      console.log('c',Alpine.data.xRepeats)
+      Alpine.data.yRepeats = determineHeight();
+    }
     Alpine.data('initData', () => ({
-      links: {{ navigation.homeItems | json }},
+      links: {{ navigation.homeNavigation | json }},
       open: true,
+      xRepeats: determineWidth(),
+      yRepeats: determineHeight(),
+      icons: ['close-outline', 'ellipse-outline', 'triangle-outline', 'close-outline'],
       toggle() {
         this.open = !this.open;
       },
     }));
+    window.onresize = updateAlpineDimensions;
   });
 </script>
 {% endblock %}
