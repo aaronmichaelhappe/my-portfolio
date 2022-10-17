@@ -1,7 +1,7 @@
 <header>
-  <nav class="container mx-auto">
+  <nav class="fixed top-0 mx-auto w-full">
     <div>
-      <ul x-data="initData" class="flex">
+      <ul x-data="initData" class="container mx-auto flex">
         <template x-for="link in links">
           <li x-text="link.text"></li>
         </template>
@@ -10,10 +10,10 @@
   </nav>
 </header>
 <script>
-  console.log({{ navigation.headerItems | json }})
+  console.log({{ navigation.headerNavigation | json }})
     document.addEventListener('alpine:init', () => {
       Alpine.data('initData', () => ({
-        links: {{ navigation.headerItems | json }},
+        links: {{ navigation.headerNavigation | json }},
         open: true,
         toggle() {
           this.open = !this.open;
