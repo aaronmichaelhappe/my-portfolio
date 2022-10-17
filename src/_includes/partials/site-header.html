@@ -10,14 +10,13 @@
   </nav>
 </header>
 <script>
-  console.log({{ navigation.headerNavigation | json }})
-    document.addEventListener('alpine:init', () => {
-      Alpine.data('initData', () => ({
-        links: {{ navigation.headerNavigation | json }},
-        open: true,
-        toggle() {
-          this.open = !this.open;
-        },
-      }));
-    });
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('initData', () => ({
+      links: {{ navigation.headerNavigation | json }},
+      open: true,
+      toggle() {
+        this.open = !this.open;
+      },
+    }));
+  });
 </script>
