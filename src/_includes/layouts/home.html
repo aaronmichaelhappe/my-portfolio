@@ -72,8 +72,24 @@
         </template>
       </div>
     </div>
-    <h1 class="text-hibiscus-200">{{ intro.title }}</h1>
-    <h2>{{ intro.subtitle }}</h2>
+    <h1>
+      <span class="hidden">{{ intro.title }}</span>
+      <span class="block">
+        <svg
+          class="svg-smile-face-logo icon mr-[36px]"
+          role="img"
+          aria-hidden="true"
+          width="4rem"
+          height="4rem"
+        >
+          <use
+            xlink:href="#svg-smile-face-logo"
+            class="logo font-xl mr-[36px]"
+          ></use>
+        </svg>
+      </span>
+    </h1>
+    <h2><span class="hidden">{{ intro.subtitle }}</span></h2>
   </div>
 </main>
 <script>
