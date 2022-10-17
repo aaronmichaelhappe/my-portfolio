@@ -1,4 +1,23 @@
 {% layout "layouts/base.html" %} {% block content %} {% iconsprite %}
+<!-- for smaller projects like this,
+  this is ok. find tailwind solution if project grows -->
+<style>
+  .svg-row {
+    fill: #4c4c4c !important;
+  }
+  .row-0 svg {
+    fill: #2d2d2d !important;
+  }
+  .row-1 svg {
+    fill: #353535 !important;
+  }
+  .row-2 svg {
+    fill: #3d3d3d !important;
+  }
+  .row-3 svg {
+    fill: #444444 !important;
+  }
+</style>
 <main
   x-data="initData"
   id="main-content"
@@ -9,13 +28,11 @@
     <div class="bg-icons absolute top-[50%] left-2">
       <div class="flex flex-col">
         <template x-for="(y, i) in yRepeats">
-          <div class="flex flex-row" :class="'-'+i">
+          <div class="svg-row flex flex-row" :class="'row-'+i">
             <template x-for="(x, i) in xRepeats">
               <div class="bg-icons-group mb-[36px] flex">
-                <p x-text="i"></p>
                 <svg
-                  class="icon mr-[36px] fill-gray-500"
-                  :class="'-'+i"
+                  class="svg-x icon mr-[36px]"
                   role="img"
                   aria-hidden="true"
                   width="24"
@@ -24,7 +41,7 @@
                   <use xlink:href="#svg-x" class="icon mr-[36px]"></use>
                 </svg>
                 <svg
-                  class="icon mr-[36px]"
+                  class="svg-circle icon mr-[36px]"
                   role="img"
                   aria-hidden="true"
                   width="24"
@@ -33,7 +50,7 @@
                   <use xlink:href="#svg-circle"></use>
                 </svg>
                 <svg
-                  class="icon mr-[36px]"
+                  class="svg-triangle icon mr-[36px]"
                   role="img"
                   aria-hidden="true"
                   width="24"
@@ -42,7 +59,7 @@
                   <use xlink:href="#svg-triangle"></use>
                 </svg>
                 <svg
-                  class="icon mr-[36px] rotate-90"
+                  class="svg-plus icon mr-[36px] rotate-90"
                   role="img"
                   aria-hidden="true"
                   width="24"
@@ -65,11 +82,10 @@
       return Math.round((window.innerWidth + 168) / 168)
     }
     function determineHeight() {
-      return Math.round((window.innerHeight  / 2 + 36) / 60);
+      return Math.round((window.innerHeight / 2 + 36) / 60);
     }
     function updateAlpineDimensions() {
       Alpine.data.xRepeats = determineWidth();
-      console.log('c',Alpine.data.xRepeats)
       Alpine.data.yRepeats = determineHeight();
     }
     Alpine.data('initData', () => ({
