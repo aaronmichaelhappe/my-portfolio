@@ -22,7 +22,7 @@
   x-data="initData"
   id="main-content"
   tabindex="-1"
-  class="relative m-2 box-border h-[98vh] overflow-hidden bg-grey-14 pt-8"
+  class="relative box-border h-[100vh] overflow-hidden border-4 border-solid border-blue border-r-green border-t-yellow border-b-hibiscus bg-grey-17 p-4 pt-8"
 >
   <div class="wrapper container mx-auto">
     <div class="bg-icons absolute top-[50%] left-2">
@@ -95,9 +95,11 @@
 <script>
   document.addEventListener('alpine:init', () => {
     function determineWidth() {
-      return Math.round((window.innerWidth + 168) / 168)
+      // win width + row el for padding. / row width
+      return Math.round((window.innerWidth + 36) / 200);
     }
     function determineHeight() {
+      // half height + row el height for padding. / row total height (el + spacing)
       return Math.round((window.innerHeight / 2 + 36) / 60);
     }
     function updateAlpineDimensions() {
