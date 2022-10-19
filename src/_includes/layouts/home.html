@@ -20,16 +20,19 @@
 </style>
 <main
   x-data="initData"
+  @resize.window="yCount = Math.round((window.innerHeight / 2 + 36) / 60), xCount = Math.round((window.innerWidth + 36) / 200)"
   id="main-content"
   tabindex="-1"
   class="relative box-border h-[100vh] overflow-hidden border-4 border-solid border-blue border-r-green border-t-yellow border-b-hibiscus bg-grey-17 p-4 pt-8"
 >
+  <span x-text="yCount"></span>
   <div class="wrapper container mx-auto">
     <div class="bg-icons absolute top-[50%] left-2">
       <div class="flex flex-col">
-        <template x-for="(y, i) in yRepeats">
+        <template x-for="(y, i) in yCount" :key="y"
+          >x-data="{ open: false }" x-effect="console.log(open)"
           <div class="svg-row flex flex-row" :class="'row-'+i">
-            <template x-for="(x, i) in xRepeats">
+            <template x-for="(x, i) in xCount" :key="x">
               <div class="bg-icons-group mb-[36px] flex">
                 <svg
                   class="svg-x icon mr-[36px]"
@@ -111,20 +114,15 @@
       return Math.round((window.innerHeight / 2 + 36) / 60);
     }
     function updateAlpineDimensions() {
-      Alpine.data.xRepeats = determineWidth();
-      Alpine.data.yRepeats = determineHeight();
+      Alpine.data.xCount = determineWidth();
+      Alpine.data.yCount = determineHeight();
     }
-    Alpine.data('initData', () => ({
+    const alpine = Alpine.data('initData', () => ({
       links: {{ navigation.homeNavigation | json }},
-      open: true,
-      xRepeats: determineWidth(),
-      yRepeats: determineHeight(),
+      xCount: Math.round((window.innerWidth + 36) / 200),
+      yCount: Math.round((window.innerHeight / 2 + 36) / 60),
       icons: ['close-outline', 'ellipse-outline', 'triangle-outline', 'close-outline'],
-      toggle() {
-        this.open = !this.open;
-      },
     }));
-    window.onresize = updateAlpineDimensions;
   });
 </script>
 {% endblock %}
