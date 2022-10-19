@@ -25,8 +25,109 @@
   tabindex="-1"
   class="relative box-border h-[100vh] overflow-hidden border-4 border-solid border-blue border-r-green border-t-yellow border-b-hibiscus bg-grey-17 p-4 pt-8"
 >
-  <span x-text="yCount"></span>
   <div class="wrapper container mx-auto">
+    <h1 class="flex h-auto max-w-[30rem] flex-wrap">
+      <span class="hidden">{{ intro.title }}</span>
+      <span class="flex w-[30rem]">
+        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+          <span class="inline-block w-full">
+            <svg viewBox="0 0 100 100">
+              <use xlink:href="#svg-smile-face-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+          <span class="inline-block w-[60%]">
+            <svg viewBox="0 0 100 100" class="fill-white">
+              <use xlink:href="#svg-a-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span
+          class="flex max-h-[5rem] flex-1 items-center justify-center bg-blue"
+        >
+          <span class="inline-block w-[60%]">
+            <svg viewBox="0 0 100 100">
+              <use xlink:href="#svg-a-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+          <span class="inline-block w-[60%]">
+            <svg viewBox="0 0 100 100" fill="white">
+              <use xlink:href="#svg-r-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span
+          class="flex max-h-[5rem] flex-1 items-center justify-center bg-blue"
+        >
+          <span class="inline-block w-[60%]">
+            <svg viewBox="0 0 100 100">
+              <use xlink:href="#svg-o-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+          <span class="inline-block w-[60%]">
+            <svg viewBox="0 0 100 100" class="fill-white">
+              <use xlink:href="#svg-n-logo"></use>
+            </svg>
+          </span>
+        </span>
+      </span>
+      <span class="flex w-[30rem]">
+        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+          <span class="invisible inline-block w-full">
+            <svg viewBox="0 0 100 100">
+              <use xlink:href="#svg-smile-face-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span
+          class="flex max-h-[5rem] flex-1 items-center justify-center bg-blue"
+        >
+          <span class="inline-block w-[60%]">
+            <svg viewBox="0 0 100 100">
+              <use xlink:href="#svg-h-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+          <span class="inline-block w-[60%]">
+            <svg viewBox="0 0 100 100" class="fill-white">
+              <use xlink:href="#svg-a-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span
+          class="flex max-h-[5rem] flex-1 items-center justify-center bg-blue"
+        >
+          <span class="inline-block w-[60%]">
+            <svg viewBox="0 0 100 100">
+              <use xlink:href="#svg-p-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+          <span class="inline-block w-[60%]">
+            <svg viewBox="0 0 100 100" class="fill-white">
+              <use xlink:href="#svg-p-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span
+          class="flex max-h-[5rem] flex-1 items-center justify-center bg-blue"
+        >
+          <span class="inline-block w-[60%]">
+            <svg viewBox="0 0 100 100" class="fill-white">
+              <use xlink:href="#svg-e-logo"></use>
+            </svg>
+          </span>
+        </span>
+      </span>
+    </h1>
+    <h2><span class="hidden">{{ intro.subtitle }}</span></h2>
     <div class="bg-icons absolute top-[50%] left-2">
       <div class="flex flex-col">
         <template x-for="(y, i) in yCount" :key="y"
@@ -75,32 +176,6 @@
         </template>
       </div>
     </div>
-    <h1 class="flex h-auto">
-      <span class="hidden">{{ intro.title }}</span>
-      <span class="flex w-[30rem]">
-        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
-          <span class="inline-block w-full">
-            <svg viewBox="0 0 100 100">
-              <use xlink:href="#svg-smile-face-logo"></use>
-            </svg>
-          </span>
-        </span>
-        <span
-          class="flex max-h-[5rem] flex-1 items-center justify-center bg-green"
-        >
-          <span class="inline-block w-[60%]">
-            <svg viewBox="0 0 100 100">
-              <use xlink:href="#svg-a-logo"></use>
-            </svg>
-          </span>
-        </span>
-        <span class="flex-1 bg-gray-400"></span>
-        <span class="flex-1 bg-blue"></span>
-        <span class="flex-1 bg-gray-200"></span>
-        <span class="flex-1 bg-gray-500"></span>
-      </span>
-    </h1>
-    <h2><span class="hidden">{{ intro.subtitle }}</span></h2>
   </div>
 </main>
 <script>
