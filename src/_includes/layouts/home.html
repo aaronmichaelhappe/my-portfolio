@@ -72,21 +72,29 @@
         </template>
       </div>
     </div>
-    <h1>
+    <h1 class="flex h-auto">
       <span class="hidden">{{ intro.title }}</span>
-      <span class="block">
-        <svg
-          class="svg-smile-face-logo icon mr-[36px]"
-          role="img"
-          aria-hidden="true"
-          width="4rem"
-          height="4rem"
+      <span class="flex w-[30rem]">
+        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+          <span class="inline-block w-full">
+            <svg viewBox="0 0 100 100">
+              <use xlink:href="#svg-smile-face-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span
+          class="flex max-h-[5rem] flex-1 items-center justify-center bg-green"
         >
-          <use
-            xlink:href="#svg-smile-face-logo"
-            class="logo font-xl mr-[36px]"
-          ></use>
-        </svg>
+          <span class="inline-block w-[60%]">
+            <svg viewBox="0 0 100 100">
+              <use xlink:href="#svg-a-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span class="flex-1 bg-gray-400"></span>
+        <span class="flex-1 bg-blue"></span>
+        <span class="flex-1 bg-gray-200"></span>
+        <span class="flex-1 bg-gray-500"></span>
       </span>
     </h1>
     <h2><span class="hidden">{{ intro.subtitle }}</span></h2>
