@@ -20,7 +20,7 @@
 </style>
 <main
   x-data="initData"
-  @resize.window="yCount = Math.round((window.innerHeight / 2 + 36) / 60), xCount = Math.round((window.innerWidth + 36) / 200)"
+  @resize.window="yCount = Math.round((window.innerHeight / 1.5 + 36) / 60), xCount = Math.round((window.innerWidth + 36) / 200)"
   id="main-content"
   tabindex="-1"
   class="relative box-border h-[100vh] overflow-hidden border-4 border-solid border-blue border-r-green border-t-yellow border-b-hibiscus bg-grey-17 p-4 pt-8"
@@ -128,7 +128,7 @@
       </span>
     </h1>
     <h2><span class="hidden">{{ intro.subtitle }}</span></h2>
-    <div class="bg-icons absolute top-[50%] left-2">
+    <div class="bg-icons absolute top-[35%] left-2">
       <div class="flex flex-col">
         <template x-for="(y, i) in yCount" :key="y"
           >x-data="{ open: false }" x-effect="console.log(open)"
@@ -180,22 +180,10 @@
 </main>
 <script>
   document.addEventListener('alpine:init', () => {
-    function determineWidth() {
-      // win width + row el for padding. / row width
-      return Math.round((window.innerWidth + 36) / 200);
-    }
-    function determineHeight() {
-      // half height + row el height for padding. / row total height (el + spacing)
-      return Math.round((window.innerHeight / 2 + 36) / 60);
-    }
-    function updateAlpineDimensions() {
-      Alpine.data.xCount = determineWidth();
-      Alpine.data.yCount = determineHeight();
-    }
     const alpine = Alpine.data('initData', () => ({
       links: {{ navigation.homeNavigation | json }},
       xCount: Math.round((window.innerWidth + 36) / 200),
-      yCount: Math.round((window.innerHeight / 2 + 36) / 60),
+      yCount: Math.round((window.innerHeight / 1.5 + 36) / 60),
       icons: ['close-outline', 'ellipse-outline', 'triangle-outline', 'close-outline'],
     }));
   });
