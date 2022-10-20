@@ -1,5 +1,5 @@
 {% layout "layouts/base.html" %} {% block content %} {% iconsprite %}
-<!-- for smaller projects like this,
+<!-- for smaller project like this,
   this is ok. find tailwind solution if project grows -->
 <style>
   .svg-row {
@@ -26,17 +26,12 @@
   class="relative box-border h-[100vh] overflow-hidden border-4 border-solid border-blue border-r-green border-t-yellow border-b-hibiscus bg-grey-17 p-4 pt-8"
 >
   <div class="wrapper container mx-auto">
-    <h1 class="flex h-auto max-w-[30rem] flex-wrap">
+    <h1
+      class="relative z-10 mx-auto flex h-auto max-w-[20rem] flex-wrap md:max-w-[40rem]"
+    >
       <span class="hidden">{{ intro.title }}</span>
-      <span class="flex w-[30rem]">
-        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
-          <span class="inline-block w-full">
-            <svg viewBox="0 0 100 100">
-              <use xlink:href="#svg-smile-face-logo"></use>
-            </svg>
-          </span>
-        </span>
-        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+      <span class="flex h-[4rem] max-h-[4rem] w-[20rem]">
+        <span class="flex max-h-[4rem] flex-1 items-center justify-center">
           <span class="inline-block w-[60%]">
             <svg viewBox="0 0 100 100" class="fill-white">
               <use xlink:href="#svg-a-logo"></use>
@@ -44,7 +39,7 @@
           </span>
         </span>
         <span
-          class="flex max-h-[5rem] flex-1 items-center justify-center bg-blue"
+          class="flex max-h-[4rem] flex-1 items-center justify-center bg-blue"
         >
           <span class="inline-block w-[60%]">
             <svg viewBox="0 0 100 100">
@@ -52,7 +47,7 @@
             </svg>
           </span>
         </span>
-        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+        <span class="flex max-h-[4rem] flex-1 items-center justify-center">
           <span class="inline-block w-[60%]">
             <svg viewBox="0 0 100 100" fill="white">
               <use xlink:href="#svg-r-logo"></use>
@@ -60,7 +55,7 @@
           </span>
         </span>
         <span
-          class="flex max-h-[5rem] flex-1 items-center justify-center bg-blue"
+          class="flex max-h-[4rem] flex-1 items-center justify-center bg-blue"
         >
           <span class="inline-block w-[60%]">
             <svg viewBox="0 0 100 100">
@@ -68,7 +63,7 @@
             </svg>
           </span>
         </span>
-        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+        <span class="flex max-h-[4rem] flex-1 items-center justify-center">
           <span class="inline-block w-[60%]">
             <svg viewBox="0 0 100 100" class="fill-white">
               <use xlink:href="#svg-n-logo"></use>
@@ -76,16 +71,9 @@
           </span>
         </span>
       </span>
-      <span class="flex w-[30rem]">
-        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
-          <span class="invisible inline-block w-full">
-            <svg viewBox="0 0 100 100">
-              <use xlink:href="#svg-smile-face-logo"></use>
-            </svg>
-          </span>
-        </span>
+      <span class="flex h-[4rem] max-h-[4rem] w-[20rem]">
         <span
-          class="flex max-h-[5rem] flex-1 items-center justify-center bg-blue"
+          class="flex max-h-[4rem] flex-1 items-center justify-center bg-blue"
         >
           <span class="inline-block w-[60%]">
             <svg viewBox="0 0 100 100">
@@ -93,7 +81,7 @@
             </svg>
           </span>
         </span>
-        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+        <span class="flex max-h-[4rem] flex-1 items-center justify-center">
           <span class="inline-block w-[60%]">
             <svg viewBox="0 0 100 100" class="fill-white">
               <use xlink:href="#svg-a-logo"></use>
@@ -101,7 +89,7 @@
           </span>
         </span>
         <span
-          class="flex max-h-[5rem] flex-1 items-center justify-center bg-blue"
+          class="flex max-h-[4rem] flex-1 items-center justify-center bg-blue"
         >
           <span class="inline-block w-[60%]">
             <svg viewBox="0 0 100 100">
@@ -109,7 +97,7 @@
             </svg>
           </span>
         </span>
-        <span class="flex max-h-[5rem] flex-1 items-center justify-center">
+        <span class="flex max-h-[4rem] flex-1 items-center justify-center">
           <span class="inline-block w-[60%]">
             <svg viewBox="0 0 100 100" class="fill-white">
               <use xlink:href="#svg-p-logo"></use>
@@ -117,11 +105,29 @@
           </span>
         </span>
         <span
-          class="flex max-h-[5rem] flex-1 items-center justify-center bg-blue"
+          class="flex max-h-[4rem] flex-1 items-center justify-center bg-blue"
         >
           <span class="inline-block w-[60%]">
             <svg viewBox="0 0 100 100" class="fill-white">
               <use xlink:href="#svg-e-logo"></use>
+            </svg>
+          </span>
+        </span>
+      </span>
+      <span class="flex w-[40rem]">
+        <span class="flex max-h-[4rem] flex-1 items-center justify-center">
+          <span class="inline-block w-[4rem]">
+            <svg viewBox="0 0 100 100">
+              <use xlink:href="#svg-smile-face-logo"></use>
+            </svg>
+          </span>
+        </span>
+        <span
+          class="flex max-h-[4rem] w-[16rem] items-center justify-center md:w-[36rem]"
+        >
+          <span class="inline-block w-full px-4 pt-2">
+            <svg viewBox="0 0 100 100">
+              <use xlink:href="#svg-portfolio"></use>
             </svg>
           </span>
         </span>
