@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['circe', 'ariel'],
+        body: ['"circe"', 'ariel'],
       },
       colors: {
         blue: {
@@ -74,3 +75,5 @@ module.exports = {
   variants: {},
   plugins: [require('@tailwindcss/typography')],
 };
+
+// font-family:"circe";

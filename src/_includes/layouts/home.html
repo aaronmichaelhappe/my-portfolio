@@ -134,29 +134,33 @@
       </span>
     </h1>
     <h2><span class="hidden">{{ intro.subtitle }}</span></h2>
-    <nav>
+    <nav class="md:h-25vh md:flex md:flex-col md:justify-center">
       <ul
         class="relative z-10 mx-auto mt-12 flex flex-col items-center justify-center gap-4 md:flex-row"
       >
         <li
           class="flex w-[12rem] items-center justify-center border-4 border-blue p-2"
         >
-          <a href="" class="text-white">Work</a>
+          <a href="" class="font-bold text-white">Work</a>
         </li>
-        <li class="flex w-[12rem] items-center justify-center bg-green p-2">
-          <a href="" class="text-white">Demo SPA</a>
+        <li
+          class="flex w-[12rem] items-center justify-center border-4 border-green bg-green p-2"
+        >
+          <a href="" class="font-bold text-white">Demo SPA</a>
         </li>
         <li
           class="flex w-[12rem] items-center justify-center border-4 border-yellow p-2"
         >
-          <a href="" class="text-white">About</a>
+          <a href="" class="font-bold text-white">About</a>
         </li>
       </ul>
     </nav>
     <footer
-      class="fixed bottom-2 left-0 right-0 z-10 w-full pr-6 text-center text-xs text-gray-200 md:text-right"
+      class="fixed bottom-2 left-2 right-2 z-10 bg-grey-17/40 bg-transparent p-2 text-center text-xs"
     >
-      Aaron Happe &copy; 2022 - Birds Aren't Real - Black Trans Lives Matter
+      <p class="m-2 text-white">
+        Aaron Happe &copy; 2022 - Birds Aren't Real - Black Trans Lives Matter
+      </p>
     </footer>
     <div class="bg-icons absolute top-[35%] left-2">
       <div class="flex flex-col">
