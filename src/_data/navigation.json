@@ -13,16 +13,22 @@
   ],
   "homeNavigation": [
     {
-      "text": "Home",
-      "url": "/"
+      "text": "Work",
+      "url": "/work",
+      "id": 0,
+      "color": "blue"
+    },
+    {
+      "text": "Demo SPA",
+      "url": "/books",
+      "id": 1,
+      "color": "green"
     },
     {
       "text": "About",
-      "url": "/about/"
-    },
-    {
-      "text": "About",
-      "url": "/about/"
+      "url": "/about",
+      "id": 2,
+      "color": "yellow"
     }
   ]
 }

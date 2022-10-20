@@ -18,10 +18,10 @@
     fill: #444444 !important;
   }
 </style>
-<main
+<div
   x-data="initData"
   @resize.window="yCount = Math.round((window.innerHeight / 1.5 + 36) / 60), xCount = Math.round((window.innerWidth + 36) / 200)"
-  id="main-content"
+  id="outter-content"
   tabindex="-1"
   class="relative box-border h-[100vh] overflow-hidden border-4 border-solid border-blue border-r-green border-t-yellow border-b-hibiscus bg-grey-17 p-4 pt-8"
 >
@@ -134,6 +134,30 @@
       </span>
     </h1>
     <h2><span class="hidden">{{ intro.subtitle }}</span></h2>
+    <nav>
+      <ul
+        class="relative z-10 mx-auto mt-12 flex flex-col items-center justify-center gap-4 md:flex-row"
+      >
+        <li
+          class="flex w-[12rem] items-center justify-center border-4 border-blue p-2"
+        >
+          <a href="" class="text-white">Work</a>
+        </li>
+        <li class="flex w-[12rem] items-center justify-center bg-green p-2">
+          <a href="" class="text-white">Demo SPA</a>
+        </li>
+        <li
+          class="flex w-[12rem] items-center justify-center border-4 border-yellow p-2"
+        >
+          <a href="" class="text-white">About</a>
+        </li>
+      </ul>
+    </nav>
+    <footer
+      class="fixed bottom-2 left-0 right-0 z-10 w-full pr-6 text-center text-xs text-gray-200 md:text-right"
+    >
+      Aaron Happe &copy; 2022 - Birds Aren't Real - Black Trans Lives Matter
+    </footer>
     <div class="bg-icons absolute top-[35%] left-2">
       <div class="flex flex-col">
         <template x-for="(y, i) in yCount" :key="y">
@@ -182,14 +206,18 @@
       </div>
     </div>
   </div>
-</main>
+</div>
 <script>
   document.addEventListener('alpine:init', () => {
     const alpine = Alpine.data('initData', () => ({
-      links: {{ navigation.homeNavigation | json }},
       xCount: Math.round((window.innerWidth + 36) / 200),
       yCount: Math.round((window.innerHeight / 1.5 + 36) / 60),
-      icons: ['close-outline', 'ellipse-outline', 'triangle-outline', 'close-outline'],
+      icons: [
+        'close-outline',
+        'ellipse-outline',
+        'triangle-outline',
+        'close-outline',
+      ],
     }));
   });
 </script>
